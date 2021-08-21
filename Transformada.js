@@ -60,9 +60,9 @@ function visualizacion ( xi , yi , frecuencias , t ,rotar){
 
          noFill()
          stroke(255)
-
-         ellipse(x_a,y_a,r*2,r*2) ;
          line(x_a,y_a,x,y) ;
+         ellipse(x_a,y_a,r*2,r*2) ;
+
 
     }
 
