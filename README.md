@@ -12,3 +12,5 @@ A set of experienced programs to visualize the fourier transform in 2D and 3D
 
 - Wikipedia : https://en.wikipedia.org/wiki/Discrete_Fourier_transform
 - 3Blue1Brown : https://www.youtube.com/watch?v=-qgreAUpPwM
+## Autor
+* Jorge Rando Hernández :part_alternation_mark: [@jorgerando](https://github.com/jorgerando)
