@@ -1,6 +1,7 @@
 
 function setup(){
   createCanvas(2000, 800);
+  
 
 }
 
@@ -10,6 +11,7 @@ function fourierTrans (senal){
   // Fk --> a + bi
   // r = (a²+b²)^(1/2)
   //  an = artg(b/a)
+
   var frecuencias = [] ;
   var N = senal.length ;
 
@@ -29,7 +31,7 @@ function fourierTrans (senal){
     a = a/N ;
     b = b/N ;
 
-    var r = Math.sqrt(a*a+b*b) ;
+    var r = Math.sqrt(a*a+b*b);
     var an = Math.atan2(b,a) ;
     var fr = k ;
 
@@ -1468,6 +1470,7 @@ var senaly = [834.66054,
 107.13574,
 107.13574,
 ]
+
 var a = 0.5 ;
 
 for(var i = 0 ; i < senalx.length ; i++ ){
@@ -1480,14 +1483,16 @@ var frecuanciasx = fourierTrans(senalx);
 var frecuanciasy = fourierTrans(senaly);
 
 var t = 0 ;
-var inT = 2*Math.PI/senalx.length ;
-
+var inT = (2*Math.PI/senalx.length ) ;
+var p =0 ;
 var path = [];
 
 function draw(){
 
   background(0);
-
+  //path = [];
+  
+  //for (var i = 0  ; i < 2*Math.PI ; i+=inT) {
   var y = visualizacion( width / 2 + 100 ,  100  , frecuanciasy , t , Math.PI/2 ) ;
   var x = visualizacion( 100, height / 2 + 100 , frecuanciasx , t , 0 ) ;
 
@@ -1497,6 +1502,9 @@ function draw(){
   line(y[0], y[1], v.x, v.y);
 
 
+   t += inT ;
+  //}
+  console.log(p);
   beginShape();
   stroke(255);
   noFill();
@@ -1504,9 +1512,7 @@ function draw(){
     vertex(path[i].x, path[i].y);
   }
   endShape();
-
-   t += inT ;
-
+  p++
 
 
 }

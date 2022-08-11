@@ -12,7 +12,6 @@ class Complex{
 
    var real_n = this.re + complex.re_() ;
    var im_n = this.im + complex.im_() ;
-
    var n = new Complex(real_n,im_n) ;
 
    return n ;
@@ -82,6 +81,7 @@ function fourier ( senal_compleja ){
          for(var n = 0 ; n < N ; n++ ){
 
             var fn =  senal_compleja[n] ;  //numero Complejo
+
             var a = Math.cos( (2*Math.PI*n*k) / N ) ;
             var b = -1*Math.sin( (2*Math.PI*n*k)/ N ) ;
 
@@ -128,7 +128,7 @@ function visualizar(frecuencia,rotar,t){
 
 
        var an = complejo.angulo() ;
-       var f = frecuencia[i][0] ;
+       var f = frecuencia[i][0] * 1000;
        var r = complejo.magnitud();
 
        x += r * Math.cos(f*t+an+rotar) ;
@@ -863,7 +863,7 @@ console.log(frecuencias);
   var p = visualizar(frecuencias,0,t) ;
   puntos.push(p);
 
-  t += Math.PI*2 / senal.length ;
+  t += (Math.PI*2 / (senal.length * 1000)) ;
 
   beginShape()
   stroke(255)
